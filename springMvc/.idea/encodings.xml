@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/springmvc01" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springmvc01/src/main/resources/springmvc-config.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/springmvc01/src/main/webapp/WEB-INF/web.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/springmvc02" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springmvc02/src/main/java/com/eng/entity/UserMapper.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/springmvc02/src/main/resources/springmvc-config.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/springmvc02/src/main/webapp/WEB-INF/content/add.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/springmvc02/src/main/webapp/WEB-INF/content/userList.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/springmvc02/src/main/webapp/WEB-INF/web.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/springmvc02/src/main/webapp/js" charset="GBK" />
+  </component>
+</project>
