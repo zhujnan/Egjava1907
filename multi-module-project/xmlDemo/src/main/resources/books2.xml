@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="gb2312"?>
+
+<booklist>
+  <book isbn="hot">
+    <title>1001</title>
+    <author>武侠</author>
+    <name>天龙八部</name>
+  </book>
+  <book isbn="hot">
+    <title>1002</title>
+    <author>武侠2</author>
+    <name>天龙八部2</name>
+  </book>
+  <book isbn="hot">
+    <title>1003</title>
+    <author>武侠3</author>
+    <name>天龙八部3</name>
+  </book>
+</booklist>

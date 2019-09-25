@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.eng</groupId>
+    <artifactId>multi-module</artifactId>
+    <packaging>pom</packaging>
+
+
+    <version>1.0-SNAPSHOT</version>
+    <!--
+    只是定义依赖的gav，没有实际进行依赖，子工程
+    如果需要依赖的话，需要在子工程中定义dependency
+    -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.9</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <modules>
+        <module>web-app</module>
+        <module>web-service</module>
+        <module>web-core</module>
+        <module>xmlDemo</module>
+    </modules>
+
+
+</project>
