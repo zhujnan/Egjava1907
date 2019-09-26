@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.eng.mapper">
+    <insert id="save" parameterType="com.eng.domain.User"
+    useGeneratedKeys="false">
+        INSERT INTO USER (id,loginname,password)
+        VALUES (#{id},#{loginname},#{password})
+    </insert>
+	<select id="selectById" parameterType="int"
+            resultType="user">
+        SELECT * FROM USER WHERE id = #{id}
+    </select>
+    <delete id="removeUser" parameterType="int">
+        DELETE FROM
+        USER
+        WHERE id = #{id}
+    </delete>
+    <select id="selectAll" resultType="map">
+        SELECT *
+        FROM  USER
+    </select>
+    <!--查询所有-->
+    <select id="selectAll2" resultMap="userResultMap">
+        SELECT *
+        FROM  USER
+    </select>
+    <resultMap id="userResultMap" type="com.eng.domain.User">
+        <id property="id" column="id"/>
+        <result property="loginname" column="loginname"/>
+        <result property="password" column="password"/>
+    </resultMap>
+    <!--修改-->
+    <update id="updateUser" parameterType="user">
+      UPDATE USER
+      set loginname = #{loginname},password=#{password}
+      where id = #{id}
+    </update>
+
+    <!--查询所有学生信息-->
+    <select id="selectStudent"
+            resultMap="studentResultMap">
+      SELECT *
+      from student
+    </select>
+    <resultMap id="studentResultMap"
+               type="com.eng.domain.Student">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="age" column="age"/>
+        <!--关联映射-->
+        <association property="clazz"
+                      javaType="com.eng.domain.Clazz"
+                      column="clazzId"
+                      select="slectClazzById"/>
+    </resultMap>
+    <!--根据Id查询班级-->
+    <select id="slectClazzById" resultType="com.eng.domain.Clazz">
+        SELECT *
+        FROM clazz
+        where id = #{id}
+    </select>
+
+    <!--查询班级信息-->
+    <select id="selectClazz"
+            resultMap="clazzResultMap">
+        SELECT *
+        FROM clazz
+    </select>
+    <resultMap id="clazzResultMap"
+               type="com.eng.domain.Clazz">
+        <id property="id" column="id"/>
+        <result property="code" column="code"/>
+        <collection property="students"
+                    javaType="ArrayList"
+                    column="id"
+                    ofType="com.eng.domain.Student"
+                    select="selectStudentById"/>
+    </resultMap>
+    <select id="selectStudentById" resultType="com.eng.domain.Student">
+      SELECT *
+      FROM student
+      WHERE clazzId = #{id}
+    </select>
+</mapper> 
